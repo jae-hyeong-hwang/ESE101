@@ -1,3 +1,5 @@
+/* this file will enable three different LEDs on and off depending on switch combiniations*/
+
 #include "mbed.h"
 
 #define BUTTON_1 p5
