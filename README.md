@@ -60,10 +60,17 @@ a. List the versions available in your repo:
 ```
 $ apt-cache madison docker-ce
 ```
-b. Install a specific version using the version string from the second column, for example, 5:18.09.1~3-0~ubuntu-xenial.
+b. Install a specific version using the version string from the second column, for example, `5:18.09.1~3-0~ubuntu-xenial`
 ```
 $ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
  ```
+**struggled a bit in this process for me.**
+It worked if I typed command
+```
+$ sudo apt-get install docker-ce=18.06.1~ce~3-0~ubuntu containerd.io
+```
+
+ 
 c. Verify that Docker Engine is installed correctly by running the hello-world image.
 ```
 $ sudo docker run hello-world
