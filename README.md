@@ -103,7 +103,7 @@ http://localhost:7829/
 
 You can check the simulator is working in real time like above picture.
 
-4. ***OPTIONAL commands***
+## ***OPTIONAL commands***
 **if you want to check all running docker containers,
 ```
 sudo docker ps
