@@ -34,8 +34,8 @@ void ControlLED_BusIO ();
 int main()
 {
     while(1) {
-        ControlLED_DigitalIO ();
-        // ControlLED_BusIO ();
+        //ControlLED_DigitalIO ();
+         ControlLED_BusIO ();
         wait(0.25);
     }
 }
@@ -47,5 +47,32 @@ bled = b4;
 }
 
 void ControlLED_BusIO (){
-    //Write your code here
+    switch(buttonbus){
+        case 0 ... 3:
+        ledsbus = 0b0100;
+        // red LED on
+        case 4 ... 5:
+        ledsbus = 0b0010;
+        // yellow LED on
+        break;
+        case 6 ... 7:
+        ledsbus = 0b0110;
+        // red and yellow LEDs on
+        case 8 ... 11:
+        ledsbus = 0b0011;
+        // yellow and blue LEDs on
+        break;
+        case 12 ... 14:
+        ledsbus = 0b0001;
+        //blue LED on
+        break;
+        case 15:
+        ledsbus = 0b0111;
+        // all LEDs on
+        break;
+        default: ;
+    }
 }
+/*
+order of pins in the constructor is the reverse order of the pins in the byte order. If you have BusIn(a,b,c,d,e,f,g,h) then the order of bits in the byte would be h, g, f, e, d, c, b, a, with ‘a’ being bit 0, ‘b’ being bit 1, ‘c’ being bit 2 and so o
+*/
